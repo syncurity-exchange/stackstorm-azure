@@ -30,8 +30,7 @@ class AzureSecurityAlerts(PollingSensor):
 
         subscription_id = config['compute']['subscription_id']
 
-        # self.client = SecurityCenter(credentials, subscription_id, asc_location="centralus")
-        self.client = SecurityCenter(credentials, subscription_id)
+        self.client = SecurityCenter(credentials, subscription_id, asc_location="centralus")
 
     def setup(self):
         pass
