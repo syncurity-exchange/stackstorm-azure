@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.2
+
+- Alert sensor
+
 ## 0.4.1
 
 - Version bump to fix tagging issue, no code changes
