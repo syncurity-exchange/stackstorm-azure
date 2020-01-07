@@ -35,7 +35,7 @@ class NotSDKAlerts(PollingSensor):
         alerts = requests.get('https://management.azure.com/subscriptions/' +
                               self.subscription_id +
                               '/providers/Microsoft.Security/alerts?api-version=2019-01-01',
-                              headers=self.headrs)
+                              headers=self.headers)
 
         self.logger.info(alerts)
 
