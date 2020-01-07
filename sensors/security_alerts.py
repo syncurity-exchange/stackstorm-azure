@@ -7,12 +7,12 @@ from msrestazure.azure_active_directory import ServicePrincipalCredentials
 
 
 class AzureSecurityAlerts(PollingSensor):
-    def __init__(self, sensor_service, config=None, poll_interval=None):
+    def __init__(self, sensor_service, config=None, poll_interval=None, ):
         super(AzureSecurityAlerts, self).__init__(sensor_service=sensor_service,
                                                   config=config,
                                                   poll_interval=poll_interval)
 
-        self.logger = sensor_service.get_logger(name=self.__class__.__name__)
+        self.logger = sensor_service.get_logger(name='AzureSecurityAlerts')
 
         self.trigger_ref = "azure.alert"
 
