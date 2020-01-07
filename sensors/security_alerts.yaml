@@ -1,5 +1,5 @@
 ---
-  class_name: "SecurityAlerts"
+  class_name: "AzureSecurityAlerts"
   entry_point: "security_alerts.py"
   description: "Get security alerts from MS Azure"
   poll_interval: 30
