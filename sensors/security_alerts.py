@@ -40,7 +40,7 @@ class AzureSecurityAlerts(PollingSensor):
 
         alerts = self.client.alerts.list()  # todo - add filters
 
-        self.logger.info('Found {} alerts'.format(len(alerts)))
+        self.logger.info('Found {} alerts'.format(len(list(alerts))))
 
         for alert in alerts:
 
