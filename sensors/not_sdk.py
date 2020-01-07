@@ -39,10 +39,13 @@ class NotSDKAlerts(PollingSensor):
         # self.logger.info('Checking for alerts between {0} and {1}'.format(last_timestamp,
         #                                                                   current_timestamp))
 
-        alerts = requests.get('https://management.azure.com/subscriptions/' +
-                              self.subscription_id +
-                              '/providers/Microsoft.Security/alerts?api-version=2019-01-01',
-                              headers=self.headers)
+        url = 'https://management.azure.com/subscriptions/' + self.subscription_id + \
+              '/providers/Microsoft.Security/alerts?api-version=2019-01-01'
+
+        self.logger.info(url)
+        self.logger.info(self.headers)
+
+        alerts = requests.get(url, headers=self.headers)
 
         self.logger.info(alerts)
 
