@@ -1,0 +1,15 @@
+---
+  class_name: "SecurityAlerts"
+  entry_point: "security_alerts.py"
+  description: "Get security alerts from MS Azure"
+  poll_interval: 30
+  enabled: false
+  trigger_types:
+    -
+      name: "security"
+      description: "Security Alert from MS Azure"
+      payload_schema:
+        type: "object"
+        properties:
+          response:
+            type: "object"

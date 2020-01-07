@@ -1,4 +1,8 @@
 ---
+subscription_id:
+  description: "Subscription id"
+  type: "string"
+  required: true
 compute:
     description: "Compute-specific settings."
     type: "object"
