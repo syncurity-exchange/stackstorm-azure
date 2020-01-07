@@ -4,3 +4,4 @@ msrestazure
 azure
 apache-libcloud
 azure-mgmt-security
+adal
