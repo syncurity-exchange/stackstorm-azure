@@ -2,6 +2,7 @@ from st2reactor.sensor.base import PollingSensor
 
 import time
 import requests
+from msgraph_auth import MSAuth
 
 
 class NotSDKAlerts(PollingSensor):
@@ -13,8 +14,14 @@ class NotSDKAlerts(PollingSensor):
         self.logger = sensor_service.get_logger(name='NotSDKAlerts')
 
         self.trigger_ref = "azure.not_sdk"
+        
+        resource_manager = config['resource_manager']
 
-        token = self.config['token']
+        token = MSAuth.client_credentials_authentication(
+                    tenant_id=resource_manager['tenant'],
+                    client_id=resource_manager['client_id'],
+                    client_secret=resource_manager['secret'])
+        
         self.headers = {
             'Authorization': 'Bearer ' + token
         }
