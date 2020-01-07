@@ -3,3 +3,4 @@ azure-mgmt==0.30.0a1
 msrestazure
 azure
 apache-libcloud
+azure-mgmt-security
