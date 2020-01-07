@@ -23,7 +23,7 @@ class NotSDKAlerts(PollingSensor):
                     client_secret=resource_manager['secret'])
         
         self.headers = {
-            'Authorization': 'Bearer ' + token
+            'Authorization': 'Bearer ' + str(token)
         }
 
         self.subscription_id = config['compute']['subscription_id']
