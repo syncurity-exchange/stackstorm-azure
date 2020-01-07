@@ -23,7 +23,7 @@ class AzureSecurityAlerts(PollingSensor):
             tenant=resource_config['tenant']
         )
 
-        subscription_id = self.config['subscription_id']
+        subscription_id = config['compute']['subscription_id']
 
         self.client = SecurityCenter(credentials, subscription_id, asc_location="centralus")
 
