@@ -1,0 +1,15 @@
+---
+  class_name: "NotSDKAlerts"
+  entry_point: "not_sdk.py"
+  description: "Get security alerts from MS Azure"
+  poll_interval: 30
+  enabled: false
+  trigger_types:
+    -
+      name: "not_sdk"
+      description: "Security Alert from MS Azure"
+      payload_schema:
+        type: "object"
+        properties:
+          response:
+            type: "object"

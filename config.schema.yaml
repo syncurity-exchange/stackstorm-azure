@@ -1,4 +1,8 @@
 ---
+token:
+    description: "Token for sensor"
+    type: "string"
+    required: false
 compute:
     description: "Compute-specific settings."
     type: "object"
