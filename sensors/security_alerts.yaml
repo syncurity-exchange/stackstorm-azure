@@ -6,7 +6,7 @@
   enabled: false
   trigger_types:
     -
-      name: "security"
+      name: "alert"
       description: "Security Alert from MS Azure"
       payload_schema:
         type: "object"
