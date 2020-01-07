@@ -15,7 +15,12 @@ class AzureSecurityAlerts(PollingSensor):
         self.logger = sensor_service.get_logger(name='AzureSecurityAlerts')
 
         self.trigger_ref = "azure.alert"
-
+        
+        filters = self.config['filters']
+        self.alert_filter = filters['filter']
+        self.select = filters['select']
+        self.expand = filters['expand']
+        
         resource_config = self.config['resource_manager']
         credentials = ServicePrincipalCredentials(
             client_id=resource_config['client_id'],
@@ -38,7 +43,8 @@ class AzureSecurityAlerts(PollingSensor):
         # self.logger.info('Checking for alerts between {0} and {1}'.format(last_timestamp,
         #                                                                   current_timestamp))
 
-        alerts = self.client.alerts.list()  # todo - add filters
+        alerts = self.client.alerts.list(filter=self.alert_filter, select=self.select,
+                                         expand=self.select)
 
         self.logger.info('Found {} alerts'.format(len(list(alerts))))
 

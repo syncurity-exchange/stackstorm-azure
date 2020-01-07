@@ -13,6 +13,24 @@ compute:
         description: "Path to certificate file used for authentication"
         type: "string"
         required: false
+fiters:
+    description: "Sensor filters"
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      filter:
+        description: "OData filter"
+        type: "string"
+        required: false
+      select:
+        description: "OData select"
+        type: "string"
+        required: false
+      expand:
+        description: "OData expand"
+        type: "string"
+        required: false
 storage:
     description: "Storage-specific settings."
     type: "object"

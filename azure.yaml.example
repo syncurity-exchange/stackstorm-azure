@@ -2,6 +2,10 @@
 compute:
   subscription_id: ""
   cert_file: ""
+filters:
+  filter:
+  select:
+  expand:
 storage:
   name: ""
   access_key: ""
