@@ -1,5 +1,5 @@
 from st2reactor.sensor.base import PollingSensor
-
+from datetime import datetime
 import time
 import requests
 from msgraph_auth import MSAuth
@@ -50,6 +50,14 @@ class NotSDKAlerts(PollingSensor):
         self.logger.info(alerts)
 
         for alert in alerts:
+
+            try:
+                dt_obj = datetime.strptime(alert['properties']['reportedTimeUtc'],
+                                           '%d.%m.%Y %H:%M:%S')
+                millisec = dt_obj.timestamp() * 1000
+                alert['properties']['timestamp'] = millisec
+            except:
+                self.logger.info('Could not convert timestamp')
 
             self.sensor_service.dispatch(trigger=self.trigger_ref,
                                          payload=alert)
